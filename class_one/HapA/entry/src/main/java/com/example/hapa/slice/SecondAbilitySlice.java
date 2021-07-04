@@ -47,7 +47,7 @@ public class SecondAbilitySlice extends AbilitySlice {
 
         @Override
         public void onAbilityDisconnectDone(ElementName elementName, int i) {
-
+            myApi = null;
         }
     };
 
