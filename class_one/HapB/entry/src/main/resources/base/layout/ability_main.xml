@@ -7,15 +7,19 @@
     ohos:orientation="vertical">
 
     <Text
+        ohos:id="$+id:text_helloworld"
         ohos:height="match_content"
         ohos:width="match_content"
+        ohos:background_element="$graphic:background_ability_main"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="$string:mainability_HelloWorld"
         ohos:text_size="40vp"
-        ohos:text="这是第二个页面"/>
+        />
     <Button
         ohos:height="match_content"
         ohos:width="match_content"
-        ohos:text="绑定远端HapA的服务"
-        ohos:text_size="30vp"
-        ohos:id="$+id:connect_hapA_service"/>
+        ohos:id="$+id:connect_by_self"
+        ohos:text="自我绑定"
+        ohos:text_size="30vp"/>
 
 </DirectionalLayout>

@@ -1,0 +1,59 @@
+{
+  "app": {
+    "bundleName": "com.example.hapb",
+    "vendor": "example",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.hapb",
+    "name": ".MyApplication",
+    "mainAbility": "com.example.hapb.MainAbility",
+    "deviceType": [
+      "phone",
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home",
+              "action.connectBySelf"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.example.hapb.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "backgroundModes": [
+          "dataTransfer",
+          "multiDeviceConnection"
+        ],
+        "name": "com.example.hapb.ServiceAbility",
+        "icon": "$media:icon",
+        "description": "$string:serviceability_description",
+        "type": "service",
+        "visible": true
+      }
+    ]
+  }
+}
