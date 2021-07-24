@@ -36,14 +36,15 @@ public class DataBaseHelper {
             int bookNameIndex = resultSet.getColumnIndexForName(DB_COLUMN_NAME);
             int bookIndex = resultSet.getColumnIndexForName(DB_COLUMN_ID);
             for (int i = 0; i<10; i++){
-                predicates.equalTo(DB_COLUMN_ID, resultSet.getInt(bookIndex));
+                DataAbilityPredicates updatePredicates = new DataAbilityPredicates();
+                updatePredicates.equalTo(DB_COLUMN_ID, resultSet.getInt(bookIndex));
                 String name = resultSet.getString(bookNameIndex) + "-TEST";
                 int id = resultSet.getInt(bookIndex) + 20;
 
                 ValuesBucket valuesBucket = new ValuesBucket();
                 valuesBucket.putString(DB_COLUMN_NAME, name);
                 valuesBucket.putInteger(DB_COLUMN_ID, id);
-                dataAbilityHelper.insert(table_uri, valuesBucket);
+                dataAbilityHelper.update(table_uri, valuesBucket,updatePredicates);
 
                 resultSet.goToPreviousRow();
             }
