@@ -6,12 +6,17 @@ import ohos.aafwk.ability.IAbilityConnection;
 import ohos.aafwk.content.Intent;
 import ohos.aafwk.content.Operation;
 import ohos.bundle.ElementName;
+import ohos.distributedschedule.interwork.DeviceInfo;
+import ohos.distributedschedule.interwork.DeviceManager;
 import ohos.hiviewdfx.HiLog;
 import ohos.hiviewdfx.HiLogLabel;
 import ohos.rpc.IRemoteObject;
 import ohos.rpc.MessageOption;
 import ohos.rpc.MessageParcel;
 import ohos.rpc.RemoteException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainAbilitySlice extends AbilitySlice {
     private static final HiLogLabel LABEL_LOG = new HiLogLabel(3, 0xD001100, "Demo");
@@ -22,6 +27,23 @@ public class MainAbilitySlice extends AbilitySlice {
         findComponentById(ResourceTable.Id_connect_by_self).setClickedListener(
                 component -> connectLocal()
         );
+        String[] permissions = {
+                "ohos.permission.READ_USER_STORAGE",
+                "ohos.permission.WRITE_USER_STORAGE",
+                "ohos.permission.DISTRIBUTED_DATASYNC"
+        };
+        List applyPermissions = new ArrayList<>();
+        for (String element : permissions) {
+            if (verifySelfPermission(element) != 0) {
+                if (canRequestPermission(element)) {
+                    applyPermissions.add(element);
+                } else {
+                }
+            } else {
+            }
+        }
+        requestPermissionsFromUser((String[]) applyPermissions.toArray(new String[0]), 0);
+
     }
 
     private IAbilityConnection connection = new IAbilityConnection() {
@@ -37,6 +59,13 @@ public class MainAbilitySlice extends AbilitySlice {
             }
 
             String processMessage = reply.readString();
+
+            List deviceInfoList = DeviceManager.getDeviceList(DeviceInfo.FLAG_GET_ONLINE_DEVICE);
+
+            for(int j = 0; j<deviceInfoList.size(); j++){
+                HiLog.debug(LABEL_LOG,deviceInfoList.get(j));
+            }
+
             HiLog.debug(LABEL_LOG,processMessage);
 
         }

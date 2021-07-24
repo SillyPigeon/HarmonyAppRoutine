@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.example.hapb",
+    "bundleName": "com.example.classtwo.hapb",
     "vendor": "example",
     "version": {
       "code": 1000000,
@@ -9,11 +9,12 @@
   },
   "deviceConfig": {},
   "module": {
-    "package": "com.example.hapb",
+    "package": "com.example.classtwo.hapb",
     "name": ".MyApplication",
-    "mainAbility": "com.example.hapb.MainAbility",
+    "mainAbility": "com.example.classtwo.hapb.MainAbility",
     "deviceType": [
       "phone",
+      "tablet",
       "tv"
     ],
     "distro": {
@@ -31,12 +32,12 @@
             ],
             "actions": [
               "action.system.home",
-              "action.connectBySelf"
+              "cvte.hm.demo.finishDataInit"
             ]
           }
         ],
         "orientation": "unspecified",
-        "name": "com.example.hapb.MainAbility",
+        "name": "com.example.classtwo.hapb.MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
         "label": "$string:entry_MainAbility",
@@ -45,33 +46,13 @@
       },
       {
         "backgroundModes": [
-          "dataTransfer",
-          "multiDeviceConnection"
+          "dataTransfer"
         ],
-        "name": "com.example.hapb.ServiceAbility",
+        "name": "com.example.classtwo.hapb.ServiceAbility",
         "icon": "$media:icon",
         "description": "$string:serviceability_description",
         "type": "service",
         "visible": true
-      }
-    ],"reqPermissions": [
-      {
-        "name": "ohos.permission.GET_DISTRIBUTED_DEVICE_INFO"
-      },
-      {
-        "name": "ohos.permission.DISTRIBUTED_DATASYNC"
-      },
-      {
-        "name": "ohos.permission.DISTRIBUTED_DEVICE_STATE_CHANGE"
-      },
-      {
-        "name": "ohos.permission.READ_USER_STORAGE"
-      },
-      {
-        "name": "ohos.permission.WRITE_USER_STORAGE"
-      },
-      {
-        "name": "ohos.permission.GET_BUNDLE_INFO"
       }
     ]
   }

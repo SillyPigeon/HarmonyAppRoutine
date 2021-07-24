@@ -1,0 +1,68 @@
+{
+  "app": {
+    "bundleName": "com.example.classTwo.HapA",
+    "vendor": "example",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.classTwo.HapA",
+    "name": ".MyApplication",
+    "mainAbility": "com.example.classTwo.HapA.MainAbility",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": true
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.example.classTwo.HapA.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "name": "com.example.classTwo.HapA.DataAbility",
+        "icon": "$media:icon",
+        "description": "$string:dataability_description",
+        "type": "data",
+        "uri": "dataability://com.example.classTwo.HapA.DataAbility",
+        "visible": true
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.COMMONEVENT_STICKY",
+        "reason": "get right",
+        "usedScene": {
+          "ability": [
+            ".MainAbilitySlice"
+          ],
+          "when": "inuse"
+        }
+      }
+    ]
+  }
+}
