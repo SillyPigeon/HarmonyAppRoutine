@@ -1,0 +1,83 @@
+{
+  "app": {
+    "bundleName": "com.example.classtwo.test4",
+    "vendor": "example",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.classtwo.test4",
+    "name": ".MyApplication",
+    "mainAbility": "com.example.classtwo.test4.MainAbility",
+    "deviceType": [
+      "phone",
+      "tv"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.example.classtwo.test4.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard",
+        "formsEnabled": true,
+        "forms": [
+          {
+            "landscapeLayouts": [
+              "$layout:form_image_with_info_date_card_2_2",
+              "$layout:form_image_with_info_date_card_2_4"
+            ],
+            "isDefault": true,
+            "scheduledUpdateTime": "11:30",
+            "defaultDimension": "2*2",
+            "name": "DateCard",
+            "description": "This is a service widget",
+            "colorMode": "auto",
+            "type": "Java",
+            "supportDimensions": [
+              "2*2",
+              "2*4"
+            ],
+            "portraitLayouts": [
+              "$layout:form_image_with_info_date_card_2_2",
+              "$layout:form_image_with_info_date_card_2_4"
+            ],
+            "updateEnabled": true,
+            "updateDuration": 30,
+            "formVisibleNotify": true,
+            "metaData": {
+              "customizeData": [
+                {
+                  "name": "needBlurBackgroundForLauncher",
+                  "value": "true"
+                }
+              ]
+            }
+          }
+        ]
+
+      }
+    ]
+  }
+}

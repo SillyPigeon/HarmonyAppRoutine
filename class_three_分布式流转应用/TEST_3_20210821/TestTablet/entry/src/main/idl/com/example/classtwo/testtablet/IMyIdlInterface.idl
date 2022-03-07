@@ -1,0 +1,10 @@
+// IMyIdlInterface.idl
+
+// Declare any non-default types here with sequenceable or interface statements
+
+interface com.example.classtwo.testtablet.IMyIdlInterface {
+    /*
+     * Example of a service method that uses some parameters
+     */
+    void sayHello([in] String device_name);
+}
